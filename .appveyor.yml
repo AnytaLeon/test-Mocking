@@ -1,0 +1,19 @@
+environment: 
+  nodejs_version: "20" # окружение
+
+branches:
+  only:
+    - main # ветка git
+
+cache: node_modules # кешировние
+
+install:
+  - npm install # команда для установки зависимостей
+ 
+build: off  # отключаем встроенную в appveyor систему сборки
+
+build_script:
+  - npm run build   # команда сборки
+
+test_script:
+  - npm run lint && npm test # скрипт для сборки
